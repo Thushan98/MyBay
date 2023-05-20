@@ -1,0 +1,24 @@
+<div class="slider">
+  <div>
+    <div class="leftArrow" (click)="goToPrevious()">❰</div>
+    <div class="rightArrow" (click)="goToNext()">❱</div>
+  </div>
+  <div
+    class="slide"
+    [ngStyle]="{ 'background-image': getCurrentSliderUrl() }"
+  ></div>
+  <!-- <div *ngIf="slide && slide.length > 0" class="slide">
+    <img *ngFor="let banner of slide; let i = index"
+    [src]="banner.url" [alt]="banner.name"/>
+  </div> -->
+  <div class="dotsContainer">
+    <div
+      *ngFor="let slide of slide; let slideIndex = index"
+      class="dot"
+      (click)="goToSlide(slideIndex)"
+    >
+      ●
+    </div>
+  </div>
+</div>
+

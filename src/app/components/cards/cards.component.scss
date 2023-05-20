@@ -1,0 +1,31 @@
+.card-container {
+  margin-top: 8px;
+  transition: all 0.2s ease-in-out;
+  width: fit-content;
+
+  .card {
+    display: block;
+    padding: 5px;
+
+    &__image-container {
+      justify-content: center;
+      background-color: red($color: #000000);
+    }
+    &__image {
+      width: 150px;
+      height: 150px;
+    }
+    &__title {
+      font-weight: 600;
+      font-family: "Roboto";
+      font-size: 16px;
+    }
+    &--margin {
+      margin-top: -8px;
+    }
+  }
+}
+.card-container .card:not(.highlight-card):hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 17px rgba(0, 0, 0, 0.35);
+}

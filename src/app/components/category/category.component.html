@@ -1,0 +1,6 @@
+<div *ngIf="category && category.length > 0" class="circle">
+  <div *ngFor="let item of category; let i = index" class="circle__content">
+    <span><img [src]="item.imgUrl" [alt]="item.type" /></span>
+    <span class="title">{{ item.type }}</span>
+  </div>
+</div>
