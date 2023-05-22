@@ -1,20 +1,29 @@
+
+
 <div class="card-container">
-  <div class="card" *ngFor="let items of products">
-    <div class="card__image-container">
-      <img [src]="items.image" class="card__image" />
-    </div>
-    <div>
-      <div class="card__title">{{ items.title }}</div>
-      <div style="display: flex; justify-content: space-between">
-        <span>{{ items.quantity }} left</span>
-        <span class="card--margin">
-          <span class="card--margin">{{ items.rating }}</span>
-          <span class="material-symbols-outlined"> star </span>
-        </span>
+  <div class="card-row" *ngFor="let row of getRows(products, 5)">
+    <div class="card" *ngFor="let items of row">
+      <div class="card__image-container">
+        <img [src]="items.image" class="card__image" />
       </div>
-      <div style="display: flex; justify-content: space-between">
-        <span>{{ items.price | currency : "LKR" }}</span>
-        <span>{{ items.discount | percent }}</span>
+      <div>
+        <div class="card__title">{{ items.title }}</div>
+        <div style="display: flex; justify-content: space-between">
+          <span>{{ items.quantity }} left</span>
+          <span class="">
+            <span style="margin-top: -4px">{{ items.rating }}</span>
+            <span>
+              <img
+                src="../../../assets/images/rating.png"
+                style="width: 15px"
+              />
+            </span>
+          </span>
+        </div>
+        <div style="display: flex; justify-content: space-between">
+          <span>{{ items.price | currency : "LKR" }}</span>
+          <span>{{ items.discount | percent }}</span>
+        </div>
       </div>
     </div>
   </div>

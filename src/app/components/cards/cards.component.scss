@@ -1,15 +1,25 @@
 .card-container {
-  margin-top: 8px;
+  justify-content: space-around;
+  margin-top: 0 8px;
   transition: all 0.2s ease-in-out;
   width: fit-content;
+
+  .card-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
 
   .card {
     display: block;
     padding: 5px;
+    margin-right: 20px;
 
     &__image-container {
+      display: flex;
       justify-content: center;
       background-color: red($color: #000000);
+      align-items: center;
     }
     &__image {
       width: 150px;
@@ -21,7 +31,8 @@
       font-size: 16px;
     }
     &--margin {
-      margin-top: -8px;
+      //display: flex;
+      //align-items: baseline;
     }
   }
 }

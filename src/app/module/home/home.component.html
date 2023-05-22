@@ -4,9 +4,53 @@
   </div>
   <div class="home__category">
     <div class="home__category-items">
-        <app-category [category]="categories"></app-category>
+        <div *ngFor="let item of categories" class="home__category-content">
+          <div class="home__category--borders"><img [src]="item.imgUrl" [alt]="item.type"  /></div>
+          <div class="title">{{ item.type }}</div>
+      </div>
     </div>
   </div>
+  <div class="home-product">
+    <div class="home-product__search">
+      <input
+        type="text"
+        name="search"
+        [(ngModel)]="searchText"
+        autocomplete="off"
+        placeholder="Start searching"
+      />
+    </div>
 
-  <app-cards [products]="product"></app-cards>
+    <div class="home-product__card-container">
+      <div class="home-product__card-row">
+        <div
+          class="home-product__cards"
+          *ngFor="let items of product | filter : searchText"
+        >
+          <div style="align-items: center">
+            <img [src]="items.image" class="" />
+          </div>
+          <div>
+            <div class="">{{ items.title }}</div>
+            <div style="display: flex; justify-content: space-between">
+              <span>{{ items.quantity }} left</span>
+              <span class="">
+                <span style="margin-top: -4px">{{ items.rating }}</span>
+                <span>
+                  <img
+                    src="../../../assets/images/rating.png"
+                    style="width: 15px"
+                  />
+                </span>
+              </span>
+            </div>
+            <div style="display: flex; justify-content: space-between">
+              <span>{{ items.price | currency : "LKR" }}</span>
+              <span>{{ items.discount | percent }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

@@ -5,19 +5,17 @@ import { MatIconModule } from '@angular/material/icon';
 
 import { CardsComponent } from './cards/cards.component';
 import { SliderComponent } from './slider/slider.component';
-import { CategoryComponent } from './category/category.component';
-
+import { FilterPipe } from '../pipes/filter.pipe';
 
 @NgModule({
     declarations: [
         CardsComponent,
         SliderComponent,
-        CategoryComponent
+        FilterPipe
     ],
     exports: [
         CardsComponent,
-        SliderComponent,
-        CategoryComponent
+        SliderComponent
     ],
     imports: [RouterModule, CommonModule, MatIconModule]
 })
