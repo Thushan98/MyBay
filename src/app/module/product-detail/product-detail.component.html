@@ -1,0 +1,37 @@
+<div class="product-detail">
+  <div class="product-detail-container" *ngIf="product">
+    <div class="product-detail-container__product-image">
+      <img src="../../../assets/images/products/{{product.image}}" style="width: 100%;">
+    </div>
+    <div class="product-detail-container__product-detail">
+      <h1 class=""><b>{{product.title}}</b></h1>
+      <div class="product-detail-container--display">
+        <p class="me-4">rating</p>
+        <p class="me-4">0</p>
+        <a href="">Submit a review</a>
+      </div>
+      <div class="product-detail-container--display">
+        <h2 class="">{{product.price | currency:'LKR'}}</h2>
+        <p class=""><s>{{product.price * 1.2 | currency:'LKR'}}</s></p>
+        <p class="product-detail-container--color-red">{{product.discount | percent}}</p>
+      </div>
+      <div class="product-detail-container--display">
+        <div class="me-5" style="font-size: 16px;">Availability:</div>
+        <span class="ms-1 text-primary" style="font-size: 16px;">{{product.quantity}} in stock</span>
+      </div>
+      <div class="product-detail-container--display">
+        <div class="me-5" style="font-size: 16px;">Category: </div>
+        <span class="ms-3">{{product.category}}</span>
+      </div>
+      <div class="mb-lg-3 mx-2" style="font-size: 16px;">
+        Free Shipping
+      </div>
+      <div class="d-flex mx-2">
+        <a routerLink="/cart"><button mat-raised-button color="primary" (click)="addToCart(product)">add to cart</button></a>
+      </div>
+      <div style="padding: 5px;">
+        {{product.description}}
+      </div>
+    </div>
+  </div>
+</div>

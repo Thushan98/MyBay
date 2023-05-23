@@ -41,27 +41,6 @@
     }
   }
   
-  // &__category-items {
-  //   display: grid;
-  //   grid-template-columns: auto auto auto auto auto;
-  //   justify-content: center;
-  //   align-items: center;
-  //   height: 120px;
-  //   text-align: center;
-  //   align-self: center;
-  //   position: relative;
-  //   background-color: yellow;
-  // }
-  // &__category-items app-category {
-  //   position: absolute;
-  //   left: 25%;
-  //   top: 50%;
-  //   justify-content: center;
-  //   align-self: center;
-  //   transform: translate(-50%, -50%);
-  //   background-color: aqua;
-  // }
-
   &-product {
     display: block;
     justify-content: center;
@@ -93,6 +72,7 @@
     &__cards {
       padding: 5px;
       margin-right: 20px;
+      margin-bottom: 10px;
     }
     &__cards:hover {
       scale: 1.3;
@@ -105,71 +85,31 @@
       margin-bottom: 40px;
     }
   }
+  &-about {
+    justify-content: center;
+    padding: 20px;
+    margin-bottom: 40px;
+
+    &-content {
+      display:flex;
+      justify-content: center;
+      margin: 0 60px;
+
+      &__box {
+        display: block; 
+        text-align: center;
+      }
+    }
+  }
 }
-
-// .card-row {
-//   display: flex;
-//   justify-content: space-between;
-//   margin-bottom: 20px;
-// }
-
-//   .card {
-//     display: block;
-//     padding: 5px;
-//     margin-right: 20px;
-
-//     &__image-container {
-//       display: flex;
-//       justify-content: center;
-//       background-color: red($color: #000000);
-//       align-items: center;
-//     }
-//     &__image {
-//       width: 150px;
-//       height: 150px;
-//     }
-//     &__title {
-//       font-weight: 600;
-//       font-family: "Roboto";
-//       font-size: 16px;
-//     }
-//     &--margin {
-//       //display: flex;
-//       //align-items: baseline;
-//     }
-//   }
-// }
-// .card-container .card:not(.highlight-card):hover {
-//   transform: translateY(-3px);
-//   box-shadow: 0 4px 17px rgba(0, 0, 0, 0.35);
-// }
-
-// .circle {
-//   width: 120px;
-//   height: 130px;
-//   grid-gap: 20px;
-//   display: grid;
-//   grid-template-columns: auto auto auto auto auto;
-
-//   :hover {
-//     scale: 1.1;
-//   }
-//   .circle-row {
-//     display: flex;
-//     justify-content: space-between;
-//   }
-
-//   &__content {
-//     align-items: center;
-//     justify-content: center;
-//     display: block;
-//     cursor: pointer;
-//     margin-right: 15px;
-//   }
-// }
 
 .title {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+a {
+  text-decoration: none;
+  color: black;
 }

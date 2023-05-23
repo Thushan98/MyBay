@@ -1,0 +1,77 @@
+<div class="cart">
+    <div class="cart-container">
+        <h1>My Cart</h1>
+        <table class="cart-container__table">
+            <thead style="width: 900px">
+                <tr>
+                    <th scope="col" style="width: 0%;">#</th>
+                    <th scope="col" style="width: 20%;">Product</th>
+                    <th scope="col" style="width: 30%;"></th>
+                    <th scope="col" style="width: 10%;">Price</th>
+                    <th scope="col" style="width: 20%;">QTY</th>
+                    <th scope="col" style="width: 20%;">Unit Price</th>
+                </tr>
+            </thead>
+            <tbody style="width: 900px">
+                <tr *ngFor="let item of items; let i= index">
+                    <td scope="row" class=""><input type="checkbox"></td>
+                    <td style="width: 20%;"><img src={{item.image}}></td>
+                    <td style="width: 30%;">{{item.title}}</td>
+                    <td style="width: 10%;">{{item.price |currency:'LKR'}}</td>
+                    <td style="width: 20%;">
+                        <div style=" display: flex;">
+                        <button (click)="decreseQuantity(item.id, item.quantity)">-</button>
+                        <input type="number" min="1" value="{{counter}}" style="width:30px">
+                        <button (click)="increseQuantity()">+</button></div>
+                    </td>
+                    <td style="width: 20%;">{{item.price * counter |currency: 'LKR'}}</td>
+                </tr>
+                <tr *ngIf="items.length === 0">
+                    <td colspan="5" style="text-align: center;">
+                      <h1 style="margin-left: 380px;">Cart is empty</h1>
+                    </td>
+                  </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="cart-container-checkout">
+        <div class="cart-container-checkout__coupen">
+            <button mat-raised-button color="primary" routerLink="/home">More Shopping</button>
+            <div style="margin-top: 50px;">
+                <input type="text" placeholder="Insert your coupen here..." />
+                <button mat-raised-button color="primary" style="margin-top: 10px;">Redeem</button>
+            </div>
+        </div>
+        <div class="cart-container-checkout__purchase" style="display: flex;">
+            <div style="width: 50%;float:right">
+                <h3>Sub total</h3>
+                <h3 style="color:rgb(186, 57, 57)">Shipping</h3>
+                <h3 style="color:rgb(37, 87, 224)">Coupen</h3>
+                <h3 style="color:rgb(37, 87, 224)">Discount</h3>
+                <h2>Total</h2>
+            </div>
+            <div style="width: 50%;">
+                <div class="" *ngIf="items.length == 0" style="width: 80%;float:right">
+                    <h3>LKR0</h3>
+                    <h3 style="color:rgb(186, 57, 57)">LKR0</h3>
+                    <h3 style="color:rgb(37, 87, 224)">LKR0</h3>
+                    <h3 style="color:rgb(37, 87, 224)">LKR0</h3>
+                    <hr>
+                    <h2>LKR0</h2>
+                    <hr>
+                </div>
+                <div class="" *ngFor="let item of items" style="width: 80%; float:right">
+                    <h3>{{item.price * counter |currency: 'LKR'}}</h3>
+                    <h3 style="color:rgb(186, 57, 57)">+(LKR20.00)</h3>
+                    <h3 style="color:rgb(37, 87, 224)">-(LKR0.00)</h3>
+                    <h3 style="color:rgb(37, 87, 224)">-{{item.price * item.discount |currency:'LKR'}}</h3>
+                    <hr>
+                    <h2 formControlName="total">{{(item.price * counter) + 20 -0 - item.price *
+                        item.discount|currency:'LKR'}}</h2>
+                    <hr>
+                    <button mat-raised-button color="primary" type="submit">Purchase</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

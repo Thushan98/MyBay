@@ -1,0 +1,38 @@
+.product-detail {
+    width: fit-content;
+    justify-content: center;
+    margin: 20px 75px;
+    padding: 20px;
+    align-items: center;
+    display: grid;
+    place-items: center;
+
+    &-container {
+        display: flex;
+        justify-content: center;
+        width: 600px;
+        align-items: center;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+
+        &__product-image {
+            padding: 10px;
+            width: 45%;
+        }
+
+        &__product-detail {
+            padding: 20px;
+            width: 55%;
+        }
+
+        &--display {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        &--color-red {
+            color: red;
+            font-size: large;
+        }
+    }
+}
