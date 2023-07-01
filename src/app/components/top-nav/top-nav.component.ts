@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/service/auth.service';
 
 @Component({
   selector: 'app-top-nav',
@@ -7,10 +8,21 @@ import { Router } from '@angular/router';
   styleUrls: ['./top-nav.component.scss'],
 })
 export class TopNavComponent {
-  constructor(private router: Router) {}
+  showHeader!: boolean;
+  showUserMenu = false;
+  constructor(private router: Router, private auth: AuthService) {}
+
+  logoutUser() {
+    this.auth.logout();
+    this.router.navigate(['login']);
+  }
 
   onLoginButtonClick() {
     this.router.navigate(['/login']);
+  }
+
+  toggleUserMenu() {
+    this.showUserMenu = !this.showUserMenu;
   }
 
   tabs = [
@@ -19,12 +31,8 @@ export class TopNavComponent {
       link: '/home',
     },
     {
-      name: 'Carear',
-      link: '/carear',
-    },
-    {
-      name: 'Tab1',
-      link: '/tab1',
-    },
+      name: 'About Us',
+      link: '/about',
+    }
   ];
 }

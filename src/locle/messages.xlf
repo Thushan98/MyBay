@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en-US" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="1534887914691693755" datatype="html">
+        <source>Free Shipping</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/module/home/home.component.html</context>
+          <context context-type="linenumber">50</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1213456775514314915" datatype="html">
+        <source>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Similique numquam assumenda esse perferendis vero.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/module/home/home.component.html</context>
+          <context context-type="linenumber">51,52</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5325824173114502665" datatype="html">
+        <source>delivery image</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/module/home/home.component.html</context>
+          <context context-type="linenumber">61</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

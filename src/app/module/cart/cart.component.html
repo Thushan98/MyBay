@@ -20,17 +20,18 @@
                     <td style="width: 10%;">{{item.price |currency:'LKR'}}</td>
                     <td style="width: 20%;">
                         <div style=" display: flex;">
-                        <button (click)="decreseQuantity(item.id, item.quantity)">-</button>
-                        <input type="number" min="1" value="{{counter}}" style="width:30px">
-                        <button (click)="increseQuantity()">+</button></div>
+                            <button (click)="decreaseQuantity(item)">-</button>
+                            <input type="number" min="1" [(ngModel)]="item.quantity" style="width:30px">
+                            <button (click)="increseQuantity(item)">+</button>
+                        </div>
                     </td>
-                    <td style="width: 20%;">{{item.price * counter |currency: 'LKR'}}</td>
+                    <td style="width: 20%;">{{item.price * item.quantity |currency: 'LKR'}}</td>
                 </tr>
                 <tr *ngIf="items.length === 0">
                     <td colspan="5" style="text-align: center;">
-                      <h1 style="margin-left: 380px;">Cart is empty</h1>
+                        <h1 style="margin-left: 380px;">Cart is empty</h1>
                     </td>
-                  </tr>
+                </tr>
             </tbody>
         </table>
     </div>
@@ -60,16 +61,15 @@
                     <h2>LKR0</h2>
                     <hr>
                 </div>
-                <div class="" *ngFor="let item of items" style="width: 80%; float:right">
-                    <h3>{{item.price * counter |currency: 'LKR'}}</h3>
+                <div class="" *ngIf="items.length > 0" style="width: 80%; float:right">
+                    <h3>{{getTotal() |currency: 'LKR'}}</h3>
                     <h3 style="color:rgb(186, 57, 57)">+(LKR20.00)</h3>
                     <h3 style="color:rgb(37, 87, 224)">-(LKR0.00)</h3>
-                    <h3 style="color:rgb(37, 87, 224)">-{{item.price * item.discount |currency:'LKR'}}</h3>
+                    <h3 style="color:rgb(37, 87, 224)">-{{getTotalDiscount() |currency:'LKR'}}</h3>
                     <hr>
-                    <h2 formControlName="total">{{(item.price * counter) + 20 -0 - item.price *
-                        item.discount|currency:'LKR'}}</h2>
+                    <h2>{{getTotal() + 20 - 0 - getTotalDiscount()|currency:'LKR'}}</h2>
                     <hr>
-                    <button mat-raised-button color="primary" type="submit">Purchase</button>
+                    <button mat-raised-button color="primary" type="submit" (click)="purchase()">Purchase</button>
                 </div>
             </div>
         </div>

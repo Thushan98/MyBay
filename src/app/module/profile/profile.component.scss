@@ -1,0 +1,43 @@
+.profile {
+    margin: 20px;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 0.25fr 2fr 0.25fr 3fr 0.25fr;
+
+    &-card {
+        padding: 30px;
+        text-align: center;
+        display: block;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+
+        &--width {
+            width: 100%;
+            margin: 20px 0;
+        }
+
+        &__profile-image {
+            border-radius: 50%;
+            width: 180px;
+            height: 180px;
+        }
+    }
+
+    &-form {
+        padding: 30px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+
+        &--flex {
+            display: flex;
+        }
+        &--width {
+            width: 49%;
+        }
+        &--color-red{
+            color: red;
+        }
+    }
+    &__save-button {
+        margin: 20px 0;
+        width: 150px;
+    }
+}

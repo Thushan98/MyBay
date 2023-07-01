@@ -2,56 +2,35 @@
   <div class="footer-container-footer">
     <div class="footer-container-footer__content">
       <h4 style="margin-bottom: -7px">Buy/sell</h4>
-      <span
-        *ngFor="let item of buySell"
-        class="footer-container-footer--small-font"
-      >
-        <a
-          href="{{ item.link }}"
-          style="text-decoration: none; color: #8a8888"
-          >{{ item.tag }}
+      <span *ngFor="let item of buySell" class="footer-container-footer--small-font">
+        <a href="{{ item.link }}" class="footer-container-footer--font-colors">{{ item.tag }}
         </a>
       </span>
     </div>
     <div class="footer-container-footer__content">
       <h4>stay connect</h4>
       <div style="display: flex" *ngFor="let sm of socialMedia">
-          <span>
-            <a href="{{ sm.link }}">
-              <svg
-                fill="#8a8888"
-                [attr.width]="sm.width"
-                [attr.height]="sm.height"
-                [attr.viewBox]="sm.viewBox"
-                [attr.version]="sm.version"
-                [attr.xmlns]="sm.xmlns"
-              >
-                <path [attr.d]="sm.d"></path>
-              </svg>
-            </a>
-          </span>
-          <span
-            style="margin-top: 10px;"
-            class="footer-container-footer--small-font"
-          >
-            <a href="{{ sm.link }}" style="text-decoration: none; color: #8a8888">
-              {{ sm.title }}
-            </a>
-          </span>
+        <span>
+          <a href="{{ sm.link }}">
+            <svg fill="#8a8888" [attr.width]="sm.width" [attr.height]="sm.height" [attr.viewBox]="sm.viewBox"
+              [attr.version]="sm.version" [attr.xmlns]="sm.xmlns">
+              <path [attr.d]="sm.d"></path>
+            </svg>
+          </a>
+        </span>
+        <span style="margin-top: 10px;" class="footer-container-footer--small-font">
+          <a href="{{ sm.link }}" class="footer-container-footer--font-colors">
+            {{ sm.title }}
+          </a>
+        </span>
       </div>
     </div>
     <div class="footer-container-footer__content">
-      <h4 style="margin-bottom: -7px">About mybay</h4>
-      <span
-        *ngFor="let info of about"
-        class="footer-container-footer--small-font"
-      >
-        <a
-          href="{{ info.link }}"
-          style="text-decoration: none; color: #8a8888"
-          >{{ info.info }}
+      <h4 class="footer-container-footer--margin-negative">About mybay</h4>
+      <span *ngFor="let info of about" class="footer-container-footer--small-font">
+        <a href="{{ info.link }}" class="footer-container-footer--font-colors">{{ info.info }}
         </a>
-        </span>
+      </span>
     </div>
   </div>
 </div>

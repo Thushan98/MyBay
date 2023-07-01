@@ -9,9 +9,11 @@ import { Slider } from 'src/app/model/slider';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
+  products: Product[] = productDetail;
+  searchText!: string;
 
   ngOnInit(): void {
-      
+
   }
 
   getRows(products: any[], itemsPerRow: number): any[][] {
@@ -23,20 +25,24 @@ export class HomeComponent implements OnInit {
       rows.push(products.slice(start, end));
     }
     return rows;
-  }  
-  searchText!:string;
+  }
+
   slides: Slider[] = [
     { url: '../../../assets/images/banner/banner1.jpg', name: 'banner1' },
     { url: '../../../assets/images/banner/banner2.jpg', name: 'banner2' },
   ];
 
   categories: Category[] = [
-    {id: 1, type: "watch", imgUrl:"../../../assets/images/pngegg.png"},
-    {id: 1, type: "watch", imgUrl:"../../../assets/images/pngegg.png"},
-    {id: 1, type: "watch", imgUrl:"../../../assets/images/pngegg.png"},
-    {id: 1, type: "watch", imgUrl:"../../../assets/images/pngegg.png"},
-    {id: 1, type: "watch", imgUrl:"../../../assets/images/pngegg.png"}
+    { id: 1, type: "Watch", imgUrl: "../../../assets/images/pngegg.png" },
+    { id: 2, type: "Bags", imgUrl: "../../../assets/images/pngegg.png" },
+    { id: 3, type: "Shoes", imgUrl: "../../../assets/images/pngegg.png" },
+    { id: 4, type: "Laptops", imgUrl: "../../../assets/images/pngegg.png" },
+    { id: 5, type: "Mobiles", imgUrl: "../../../assets/images/pngegg.png" }
   ];
-
-  products: Product[] = productDetail;
+  sortedItems: Product[] = [];
+  sortItems(value: any) {
+    //let sorting = [];
+    console.log(value);
+    this.sortedItems = this.products.filter(item => item.category === value);
+  }
 }

@@ -10,6 +10,8 @@ import { TopnavModule } from "./components/top-nav/top-nav.module";
 import { HomeModule } from './module/home/home.module';
 import { FooterModule } from './components/footer/footer.module';
 import { AppCommonModule } from './components/common.module';
+import { ProfileModule } from './module/profile/profile.module';
+import { LoginModule } from './auth/login/login.module';
 
 @NgModule({
     declarations: [
@@ -27,7 +29,9 @@ import { AppCommonModule } from './components/common.module';
         TopnavModule,
         HomeModule,
         FooterModule,
-        AppCommonModule
+        AppCommonModule,
+        ProfileModule,
+        LoginModule
     ]
 })
 export class AppModule { }

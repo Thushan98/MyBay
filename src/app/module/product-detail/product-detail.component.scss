@@ -6,6 +6,7 @@
     align-items: center;
     display: grid;
     place-items: center;
+    width: 90%;
 
     &-container {
         display: flex;
@@ -33,6 +34,10 @@
         &--color-red {
             color: red;
             font-size: large;
+        }
+        
+        &--font-size {
+            font-size: 16px;
         }
     }
 }

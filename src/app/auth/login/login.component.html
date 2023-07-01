@@ -1,0 +1,104 @@
+<div class="auth">
+    <div class="auth-container">
+        <div class="auth-container-login">
+            <div *ngIf="!showLogin" class="auth-container-login-image"></div>
+            <div *ngIf="showLogin">
+                <div class="auth-container-login__head"><img src="../../../favicon.ico"
+                        class="auth-container-login__logo" />
+                </div>
+                <div class="auth-container-login__head">
+                    <h1>Login to your Account</h1>
+                </div>
+                <span>
+                    <form [formGroup]="loginForm">
+                        <input type="text" id="emailInput" placeholder="Email..." formControlName="email" required
+                            class="invalid-input" />
+                        <div
+                            *ngIf="loginForm.controls.email.invalid && (loginForm.controls.email.dirty || loginForm.controls.email.touched)">
+                            <div *ngIf="loginForm.controls.email.errors?.['required']" class="alert">
+                                *Email is required
+                            </div>
+                            <div *ngIf="loginForm.controls.email.errors?.['email']" class="alert">
+                                *This is not correct type of email
+                            </div>
+                            <div *ngIf="loginForm.controls.email.errors?.['uniqueEmailValidator']">*This email is already there</div>
+                        </div>
+                        <input type="password" id="passwordInput" placeholder="Password" formControlName="password"
+                            required />
+                        <div
+                            *ngIf="loginForm.controls.password.invalid && (loginForm.controls.password.dirty || loginForm.controls.password.touched)">
+                            <div *ngIf="loginForm.controls.password.errors?.['required']" class="alert">
+                                *Password is required
+                            </div>
+                        </div>
+                        <p class="auth-container-login--forget-password">forget password</p>
+                    </form>
+                </span>
+                <div class="auth-container-login__button-one">
+                    <div><button mat-raised-button color="primary" (click)="login()">Login</button></div>
+                    <div class="auth-container-login__sign-text">
+                        <i>Don't have an account </i>&nbsp;&nbsp;
+                        <p class="auth-container-login--signing" (click)="changeLoginSignup()">Signup</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="auth-container-signup">
+            <div class="auth-container-signup-image" *ngIf="showLogin"></div>
+            <div *ngIf="!showLogin">
+                <div class="auth-container-login__head"><img src="../../../favicon.ico"
+                        class="auth-container-login__logo" />
+                </div>
+                <div class="auth-container-login__head">
+                    <h1>Create your Account</h1>
+                </div>
+                <span>
+                    <form [formGroup]="signupForm">
+                        <input type="text" id="emailInput" formControlName="email" placeholder="Email..." required/>
+                        <div
+                            *ngIf="signupForm.controls.email.invalid && (signupForm.controls.email.dirty || signupForm.controls.email.touched)">
+                            <div *ngIf="signupForm.controls.email.errors?.['required']" class="alert">
+                                *Email is required
+                            </div>
+                            <div *ngIf="signupForm.controls.email.errors?.['email']" class="alert">
+                                *This is not correct type of email
+                            </div>
+                            <div *ngIf="signupForm.controls.email.errors?.['uniqueEmailValidator']">*This email is already there</div>
+                        </div>
+                        <input type="text" id="nameInput" formControlName="name" placeholder="Name" required />
+                        <div
+                            *ngIf="signupForm.controls.name.invalid && (signupForm.controls.name.dirty || signupForm.controls.name.touched)">
+                            <div *ngIf="signupForm.controls.name.errors?.['required']" class="alert">
+                                *Name is required
+                            </div>
+                        </div>
+                        <input type="password" id="passwordInput" formControlName="password" placeholder="Password" required />
+                        <div
+                            *ngIf="signupForm.controls.password.invalid && (signupForm.controls.password.dirty || signupForm.controls.password.touched)">
+                            <div *ngIf="signupForm.controls.password.errors?.['required']" class="alert">
+                                *Password is required
+                            </div>
+                        </div>
+                        <input type="password" id="confirmPasswordInput" formControlName="confirmPassword" placeholder="Confirm Password" required />
+                        <div
+                            *ngIf="signupForm.controls.confirmPassword.invalid && (signupForm.controls.confirmPassword.dirty || signupForm.controls.confirmPassword.touched)">
+                            <div *ngIf="signupForm.controls.confirmPassword.errors?.['required']" class="alert">
+                                *Confirm Password is required
+                            </div>
+                        </div>
+                        <div *ngIf="!passwordsMatch()" class="alert">
+                            *Password not matching
+                        </div>
+                    </form>
+                </span>
+                <div class="auth-container-signup__button-one">
+                    <div><button mat-raised-button color="primary" (click)="signup()" [disabled]="signupForm.invalid || !passwordsMatch()">Signup</button></div>
+                    <div class="auth-container-login__sign-text">
+                        <i>Already have an account</i>&nbsp;&nbsp;
+                        <p class="auth-container-login--signing" (click)="changeLoginSignup()">Login</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

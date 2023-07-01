@@ -16,17 +16,29 @@
       padding: var(--spacing-eight);
       display: grid;
     }
+
     &__social-media {
       padding-top: var(--spacing-eight);
       width: var(--spacing-half);
     }
+
     &--small-font {
       font-size: calc(var(--font-size-one) - 3px);
       color: var(--color-n-reset);
       margin-bottom: calc(var(--spacing-one) * -1);
     }
+
     &--small-font.no-underline {
       text-decoration: none;
+    }
+
+    &--font-colors {
+      text-decoration: none;
+      color: #8a8888;
+    }
+
+    &--margin-negative {
+      margin-top: -7px;
     }
   }
 }

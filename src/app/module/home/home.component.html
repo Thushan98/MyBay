@@ -4,7 +4,7 @@
   </div>
   <div class="home__category">
     <div class="home__category-items">
-      <div *ngFor="let item of categories" class="home__category-content">
+      <div *ngFor="let item of categories" class="home__category-content" (click)="sortItems(item.type)">
         <div class="home__category--borders"><img [src]="item.imgUrl" [alt]="item.type" /></div>
         <div class="title">{{ item.type }}</div>
       </div>
@@ -14,26 +14,25 @@
     <div class="home-product__search">
       <input type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="Start searching" />
     </div>
-
     <div class="home-product__card-container">
       <div class="home-product__card-row">
         <div class="home-product__cards" *ngFor="let items of products | filter : searchText">
           <a [routerLink]="['/products/', items.id]">
-            <div style="align-items: center; text-align: center;">
-              <img [src]="items.image"/>
+            <div class="home-product--center">
+              <img [src]="items.image" />
             </div>
             <div>
-              <div class="">{{ items.title }}</div>
-              <div style="display: flex; justify-content: space-between">
+              <div>{{ items.title }}</div>
+              <div class="home-product--display">
                 <span>{{ items.quantity }} left</span>
-                <span class="">
+                <span>
                   <span style="margin-top: -4px">{{ items.rating }}</span>
                   <span>
                     <img src="../../../assets/images/rating.png" style="width: 15px" />
                   </span>
                 </span>
               </div>
-              <div style="display: flex; justify-content: space-between">
+              <div class="home-product--display">
                 <span>{{ items.price | currency : "LKR" }}</span>
                 <span>{{ items.discount | percent }}</span>
               </div>
@@ -47,20 +46,20 @@
     <div class="home-about-content">
       <div class="home-about-content__box">
         <img src="../../../assets/images/delivery.jpg">
-        <h2 class="">Free Shipping</h2>
-        <p class="">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Similique numquam
+        <h2 i18n>Free Shipping</h2>
+        <p i18n>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Similique numquam
           assumenda esse perferendis vero.</p>
       </div>
       <div class="home-about-content__box">
-        <img src="../../../assets/images/dollar.jpg" class="">
-        <h2 class="">100% Refund</h2>
-        <p class="">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Similique numquam
+        <img src="../../../assets/images/dollar.jpg">
+        <h2>100% Refund</h2>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Similique numquam
           assumenda esse perferendis vero.</p>
       </div>
       <div class="home-about-content__box">
-        <img src="../../../assets/images/delivery.jpg" class="">
-        <h2 class="">Support 24/7</h2>
-        <p class="">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Similique numquam
+        <img i18n-alt src="../../../assets/images/delivery.jpg" alt="delivery image">
+        <h2>Support 24/7</h2>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Similique numquam
           assumenda esse perferendis vero.</p>
       </div>
     </div>

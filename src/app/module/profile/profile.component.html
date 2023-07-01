@@ -1,0 +1,69 @@
+<div class="profile">
+    <div>
+    <div class="profile-card">
+        <div class="profile-card--width"><h2>thushan</h2></div>
+        <div class="profile-card--width">
+            <svg height="200" width="200" *ngIf="selectedFile">
+                <circle
+                  cx="100"
+                  cy="100"
+                  r="80"
+                  stroke="black"
+                  stroke-width="2"
+                  [attr.fill]="selectedImage ? 'url(#image-pattern)' : 'red'"
+                />
+                <defs>
+                  <pattern id="image-pattern" x="0" y="0" height="1" width="1">
+                    <image [attr.href]="selectedImage" height="200" width="200" />
+                  </pattern>
+                </defs>
+              </svg>
+        </div>
+        <button mat-raised-button color="primary" (click)="enableForm()" [disabled]="!saveButtonDisable">Edit Profile</button>
+    </div>
+    <div></div>
+    <div class="profile-form">
+        <h2>Profile</h2>
+        <form [formGroup]="userDetailForm">
+            <label for="nameInput">Name</label>
+            <input type="text" id="nameInput" formControlName="name"/>
+            <label for="emailInput">Email</label>
+            <input type="text" id="emailInput" formControlName="email">
+            <span class="profile-form--flex">
+                <span class="profile-form--width">
+                    <label for="phoneInput">Phone</label>
+                    <input type="number" id="phoneInput" formControlName="phone" >
+                </span>
+                <span class="profile-form--width">
+                    <label for="profileInput">Image</label>
+                    <input type="file" id="profileInput" formControlName="image" [accept]="acceptedFile.join(', ')" (change)="OnFileSelect($event)">
+                    <p class="profile-form--color-red">{{ errorMsg }}</p>
+                </span>
+            </span>
+            <br>
+            <h2>Address</h2>
+            <span class="profile-form--flex">
+                <span class="profile-form--width">
+                    <label for="line1Input">Line 1</label>
+                    <input type="text" id="line1Input" formControlName="line1">
+                </span>
+                <span class="profile-form--width">
+                    <label for="line2Input">Line 2</label>
+                    <input type="text" id="line2Input" formControlName="line2" />
+                </span>
+            </span>
+            <span class="profile-form--flex">
+                <span class="profile-form--width">
+                    <label for="cityInput">City</label>
+                    <input type="text" id="cityInput" formControlName="city" >
+                </span>
+                <span class="profile-form--width">
+                    <label for="townInput">Nearesr Town</label>
+                    <input type="text" id="townInput" formControlName="town">
+                </span>
+            </span>
+        </form>
+        <button mat-raised-button color="primary" class="profile__save-button" (click)="saveDetail()" [disabled]="saveButtonDisable">Save</button>
+    </div>
+    <div></div></div>
+</div>

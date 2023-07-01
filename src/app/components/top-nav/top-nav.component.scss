@@ -13,6 +13,7 @@
     display: flex;
     align-items: center;
   }
+
   &__logo {
     padding: var(--spacing-half);
     width: var(--spacing-two);
@@ -22,12 +23,14 @@
       transform: scale(1.5);
     }
   }
+
   &__center-tabs {
     padding: var(--spacing-half);
     color: var(--color-g-night);
     text-transform: uppercase;
     font-size: var(--spacing-one);
   }
+
   &__tabs {
     padding: var(--spacing-half);
     cursor: pointer;
@@ -35,6 +38,7 @@
       background-color: var(--color-b-dark);
     }
   }
+
   &__right-tabs {
     padding: var(--spacing-half);
     display: flex;
@@ -44,9 +48,31 @@
 .material-symbols-outlined {
   font-size: 40px;
   cursor: pointer;
+  margin: 4px;
   font-variation-settings:
   'FILL' 0,
   'wght' 400,
   'GRAD' 0,
   'opsz' 48
+}
+
+.toggle-box {
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  position:fixed;
+  z-index: 1;
+  display: block;
+  right:0;
+  top: 65px;
+  margin-right: 30px;
+  width: auto;
+  height: auto;
+  padding: 5px;
+  cursor: pointer;
+  background-color: #fafafa;
+
+  &__content {
+    width: 75px;
+    height: 25px;
+  }
 }
