@@ -30,9 +30,5 @@ export class TopNavComponent {
       name: 'Home',
       link: '/home',
     },
-    {
-      name: 'About Us',
-      link: '/about',
-    }
   ];
 }

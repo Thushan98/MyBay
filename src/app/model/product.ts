@@ -17,7 +17,7 @@ export const productDetail=[
     description: "test description",
     rating: 5,
     discount: 0.05,
-    image: "../../../assets/images/pngegg.png",
+    image: "../../../assets/images/product/rolex-watch.webp",
     quantity: 6,
     price: 5000,
     category: 1
@@ -29,7 +29,7 @@ export const productDetail=[
     quantity: 50,
     category: 2,
     description:"",
-    image: "../../../assets/images/pngegg.png",
+    image: "../../../assets/images/product/belt.jpg",
     discount: .20,
     rating: 4
 },
@@ -40,7 +40,7 @@ export const productDetail=[
     quantity: 20,
     category: 3,
     description:"",
-    image: "../../../assets/images/pngegg.png",
+    image: "../../../assets/images/product/heel.jpg",
     discount: .20,
     rating: 4
 },
@@ -51,7 +51,7 @@ export const productDetail=[
     quantity: 5,
     category: 4,
     description:"",
-    image: "../../../assets/images/pngegg.png",
+    image: "../../../assets/images/product/bag-pack.webp",
     discount: .20,
     rating: 4
 },
@@ -62,7 +62,7 @@ export const productDetail=[
     quantity: 15,
     category: 2,
     description:"",
-    image: "../../../assets/images/pngegg.png",
+    image: "../../../assets/images/product/black-sneakers.webp",
     discount: .20,
     rating: 4
 },
@@ -73,7 +73,7 @@ export const productDetail=[
     quantity: 5,
     category: 2,
     description:"",
-    image: "../../../assets/images/pngegg.png",
+    image: "../../../assets/images/product/ladies-sneaker.jpg",
     discount: .30,
     rating: 4
 },
@@ -84,7 +84,7 @@ export const productDetail=[
     quantity: 15,
     category: 1,
     description:"",
-    image: "../../../assets/images/pngegg.png",
+    image: "../../../assets/images/product/rolex-2.webp",
     discount: .20,
     rating: 4
 },
@@ -95,7 +95,7 @@ export const productDetail=[
     quantity: 10,
     category: 3,
     description:"",
-    image: "../../../assets/images/pngegg.png",
+    image: "../../../assets/images/product/handbag-red.jpg",
     discount: .20,
     rating: 4
 },
@@ -106,7 +106,7 @@ export const productDetail=[
     quantity: 5,
     category: 3,
     description:"",
-    image: "../../../assets/images/pngegg.png",
+    image: "../../../assets/images/product/blue-handbag.jpeg",
     discount: .20,
     rating: 4
 }

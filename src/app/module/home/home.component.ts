@@ -33,11 +33,11 @@ export class HomeComponent implements OnInit {
   ];
 
   categories: Category[] = [
-    { id: 1, type: "Watch", imgUrl: "../../../assets/images/pngegg.png" },
-    { id: 2, type: "Bags", imgUrl: "../../../assets/images/pngegg.png" },
-    { id: 3, type: "Shoes", imgUrl: "../../../assets/images/pngegg.png" },
-    { id: 4, type: "Laptops", imgUrl: "../../../assets/images/pngegg.png" },
-    { id: 5, type: "Mobiles", imgUrl: "../../../assets/images/pngegg.png" }
+    { id: 1, type: "Watch", imgUrl: "../../../assets/images/category/watch-cat.webp" },
+    { id: 2, type: "Bags", imgUrl: "../../../assets/images/category/bag-cat.jpg"},
+    { id: 3, type: "Shoes", imgUrl: "../../../assets/images/category/shoes-cat.jpg"},
+    { id: 4, type: "Laptops", imgUrl: "../../../assets/images/category/lap-cat.webp" },
+    { id: 5, type: "Mobiles", imgUrl: "../../../assets/images/category/mobile-cat.webp" }
   ];
   sortedItems: Product[] = [];
   sortItems(value: any) {

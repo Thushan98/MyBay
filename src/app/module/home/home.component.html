@@ -5,7 +5,7 @@
   <div class="home__category">
     <div class="home__category-items">
       <div *ngFor="let item of categories" class="home__category-content" (click)="sortItems(item.type)">
-        <div class="home__category--borders"><img [src]="item.imgUrl" [alt]="item.type" /></div>
+        <div class="home__category--borders"><img [src]="item.imgUrl" [alt]="item.type" style="width: 150px;height: 150px;"/></div>
         <div class="title">{{ item.type }}</div>
       </div>
     </div>
@@ -19,7 +19,7 @@
         <div class="home-product__cards" *ngFor="let items of products | filter : searchText">
           <a [routerLink]="['/products/', items.id]">
             <div class="home-product--center">
-              <img [src]="items.image" />
+              <img [src]="items.image" style="width: 200px;height: 200px;"/>
             </div>
             <div>
               <div>{{ items.title }}</div>

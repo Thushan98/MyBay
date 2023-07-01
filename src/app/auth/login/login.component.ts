@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit {
 
   signupForm = this.fb.group({
     name: ['', Validators.required],
-    email: ['', [Validators.email, Validators.required]],
+    email: ['', [Validators.email, Validators.required, this.uniqueEmailValidator]],
     password: ['', Validators.required],
     confirmPassword: ['', [Validators.required]]
   })
@@ -65,6 +65,7 @@ export class LoginComponent implements OnInit {
     console.log(this.auth.userData);
     this.snackBar.open(this.signupForm.controls.name.value + ", you are a member now. Pleases Login now", '', { duration: 2000 });
     this.signupForm.reset();
+    this.showLogin=true;
   }
 
   changeLoginSignup() {
